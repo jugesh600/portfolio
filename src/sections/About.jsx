@@ -9,14 +9,10 @@ const About = () => {
     <section
       id="about"
       className={`w-full py-20 transition-colors duration-300 ${
-        theme === "dark"
-          ? "bg-gray-900 text-white"
-          : "bg-gray-50 text-gray-900"
+        theme === "dark" ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
       }`}
     >
-      <h2 className="text-4xl font-bold text-center mb-12">
-        About Me
-      </h2>
+      <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto px-6">
         {/* Profile Image */}
@@ -51,6 +47,13 @@ const About = () => {
             Outside of coding, I love learning new technologies, exploring UI
             trends, and continuously improving my craft.
           </p>
+          <a
+            href="/jugeshresume.pdf"
+            download="Jugesh_Kumar_Resume.pdf"
+            className="inline-block bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white px-6 py-3 rounded-lg shadow transition duration-300"
+          >
+            Download Resume
+          </a>
         </div>
       </div>
     </section>
