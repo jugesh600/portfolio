@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import { ThemeContext } from "../themes/ThemeProvider.jsx";
 
 const projects = [
   {
@@ -31,10 +32,19 @@ const projects = [
 ];
 
 const Projects = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <section id="projects" className="py-20 bg-gray-50 text-gray-800">
+    <section
+      id="projects"
+      className={`py-20 transition-colors duration-300 ${
+        theme === "dark"
+          ? "bg-gray-900 text-white"
+          : "bg-gray-100 text-gray-900"
+      }`}
+    >
       <div className="text-center mb-12 px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+        <h2 className="text-4xl md:text-5xl font-bold">
           My Projects
         </h2>
         <p className="text-gray-500 mt-2 text-sm md:text-base">
@@ -59,7 +69,12 @@ const Projects = () => {
         >
           {projects.map((project, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col md:flex-row items-center justify-center bg-white shadow-lg rounded-2xl p-6 md:p-10 gap-6">
+              <div
+                className={`flex flex-col md:flex-row items-center justify-center rounded-2xl p-6 md:p-10 gap-6 shadow-lg transition duration-300 ${
+                  theme === "dark" ? "bg-gray-800" : "bg-white"
+                }`}
+              >
+                {/* Project Image */}
                 <div className="w-full md:w-1/2 flex justify-center">
                   <img
                     src={project.img}
@@ -67,11 +82,13 @@ const Projects = () => {
                     className="rounded-xl shadow-md w-full md:w-[90%] h-auto object-cover transition-transform duration-300 hover:scale-105"
                   />
                 </div>
+
+                {/* Project Description */}
                 <div className="w-full md:w-1/2 text-center md:text-left">
                   <h3 className="text-2xl font-semibold mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 text-sm md:text-base">
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm md:text-base">
                     {project.description}
                   </p>
                   <a

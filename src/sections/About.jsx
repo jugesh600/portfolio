@@ -1,12 +1,60 @@
-const About = () => (
-  <section id="about" className="py-16">
-    <h2 className="text-3xl font-semibold text-center mb-6">About Me</h2>
-    <p className="max-w-2xl mx-auto text-gray-600 text-center leading-relaxed">
-      I’m a developer who loves solving problems, designing smooth interfaces, and creating meaningful
-      digital experiences. With skills in React, Tailwind CSS, and Firebase, I build projects that
-      balance design and functionality.
-    </p>
-  </section>
-);
+import React, { useContext } from "react";
+import myPhoto from "../assets/profile.jpg";
+import { ThemeContext } from "../themes/ThemeProvider.jsx";
+
+const About = () => {
+  const { theme } = useContext(ThemeContext);
+
+  return (
+    <section
+      id="about"
+      className={`w-full py-20 transition-colors duration-300 ${
+        theme === "dark"
+          ? "bg-gray-900 text-white"
+          : "bg-gray-50 text-gray-900"
+      }`}
+    >
+      <h2 className="text-4xl font-bold text-center mb-12">
+        About Me
+      </h2>
+
+      <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto px-6">
+        {/* Profile Image */}
+        <div className="flex-shrink-0 w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg ring-4 ring-indigo-500/30 dark:ring-indigo-400/30">
+          <img
+            src={myPhoto}
+            alt="Jugesh Kumar"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* About Content */}
+        <div className="max-w-2xl text-center md:text-left">
+          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            Hello! 👋 I’m{" "}
+            <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+              Jugesh Kumar
+            </span>
+            , a passionate front-end developer focused on creating interactive,
+            visually appealing, and user-friendly websites.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            I specialize in{" "}
+            <span className="font-medium text-indigo-600 dark:text-indigo-400">
+              React.js, Tailwind CSS, and Firebase
+            </span>
+            , turning creative designs into fully functional web applications.
+            My goal is to blend clean design with solid technical foundations to
+            deliver meaningful digital experiences.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            Outside of coding, I love learning new technologies, exploring UI
+            trends, and continuously improving my craft.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default About;

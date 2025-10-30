@@ -1,5 +1,7 @@
 import React from "react";
 import { GraduationCap, Calendar } from "lucide-react"; // Lucide for icons
+import { useContext } from "react";
+import { ThemeContext } from "../themes/ThemeProvider.jsx";
 
 const qualifications = [
   {
@@ -15,10 +17,18 @@ const qualifications = [
 ];
 
 const Qualification = () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <section id="Qualification" className="py-20 bg-gray-50 text-gray-800">
+    <section
+      id="qualification"
+      className={`py-20 transition-colors duration-300 ${
+        theme === "dark"
+          ? "bg-gray-900 text-white"
+          : "bg-gray-100 text-gray-900"
+      }`}
+    >
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-900">Qualification</h2>
+        <h2 className="text-4xl font-bold ">Qualification</h2>
         <p className="text-gray-500 mt-2">My personal journey</p>
       </div>
 
