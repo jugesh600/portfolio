@@ -48,7 +48,7 @@ const About = () => {
             trends, and continuously improving my craft.
           </p>
           <a
-            href="/jugeshresume.pdf"
+            href="/Jugesh_Resume.pdf"
             download="Jugesh_Kumar_Resume.pdf"
             className="inline-block bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white px-6 py-3 rounded-lg shadow transition duration-300"
           >
