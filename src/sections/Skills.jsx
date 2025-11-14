@@ -6,8 +6,9 @@ const skillsData = [
   { name: "CSS", level: 80 },
   { name: "JavaScript", level: 60 },
   { name: "React", level: 75 },
-  { name: "jQuery", level: 61 },
+  { name: "Tailwind", level: 61 },
   { name: "Bootstrap", level: 65 },
+  { name: "Black Hat Seo Expert", level: 65 },
 ];
 
 const Skills = () => {
@@ -39,7 +40,7 @@ const Skills = () => {
     >
       {/* Section Heading */}
       <div className="text-center mb-12 px-4">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white ">
+        <h2 className="text-4xl font-bold ">
           Skills
         </h2>
         <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">
